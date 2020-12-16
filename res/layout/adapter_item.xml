@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="horizontal" android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="@color/white"
+    android:gravity="right">
+
+
+
+    <TextView
+        android:id="@+id/textview_adapterItem"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Food"
+        android:textSize="13sp"
+        android:textStyle="bold"
+        android:paddingTop="20dp"
+        android:paddingBottom="20dp"
+        android:paddingRight="10dp"
+        android:layout_marginLeft="5dp"
+        android:layout_gravity="center"
+        android:onClick="getSuggestion"
+        android:paddingEnd="10dp"
+        tools:ignore="RtlSymmetry"
+        android:layout_weight="2"
+        android:layout_marginStart="5dp" />
+<Button
+    android:id="@+id/button_adapterItem"
+    android:layout_width="30dp"
+    android:layout_height="30dp"
+    android:layout_gravity="center_vertical"
+    android:onClick="deleteFavorite"
+    android:layout_weight="1"
+    android:background="@android:drawable/ic_delete"/>
+
+
+
+</LinearLayout>

@@ -1,0 +1,265 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/bigConstraint"
+    android:layout_marginRight="5dp"
+    android:layout_marginLeft="5dp"
+    android:layout_width="200dp"
+    android:layout_height="wrap_content"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/dynamicCardview"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        app:cardBackgroundColor="@color/colorPrimary"
+        app:cardCornerRadius="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginBottom="5dp">
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/promptconstraints_meal"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/MealName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="MealName"
+                android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                android:layout_marginRight="2dp"
+                app:layout_constraintRight_toLeftOf="@id/NewMealTotalCalories"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/NewMealTotalCalories"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="9 calories"
+                android:layout_marginLeft="2dp"
+                android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toRightOf="@id/MealName"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+
+    <!--<RelativeLayout
+        android:id="@+id/CalorieMacrosfieldPrompter"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:background="#000000"
+        android:gravity="center"
+        android:padding="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/dynamicCardview">
+
+
+        <TextView
+            android:id="@+id/insertData_foodName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="meal name"
+            android:textColor="#ffffff"
+            android:textSize="@dimen/FD_insertDataTab_demin"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+
+        <TextView
+            android:id="@+id/insertData_Calories"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/insertData_foodName"
+            android:layout_marginLeft="8dp"
+            android:layout_toRightOf="@+id/insertData_foodName"
+            android:text="calories"
+            android:textColor="#ffffff"
+            android:textSize="@dimen/FD_insertDataTab_demin"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/insertData_amnt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/insertData_Calories"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="8dp"
+            android:layout_toRightOf="@id/insertData_Calories"
+            android:text="# of servings"
+            android:textColor="#ffffff"
+            android:textSize="@dimen/FD_insertDataTab_demin"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/insertData_protein"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/insertData_amnt"
+            android:layout_marginLeft="8dp"
+            android:layout_toRightOf="@+id/insertData_amnt"
+            android:text="#protein"
+            android:textColor="#ffffff"
+            android:textSize="@dimen/FD_insertDataTab_demin"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/insertData_carbs"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/insertData_protein"
+            android:layout_marginLeft="8dp"
+            android:layout_toRightOf="@+id/insertData_protein"
+            android:text="#carbs"
+            android:textColor="#ffffff"
+            android:textSize="@dimen/FD_insertDataTab_demin"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/insertData_fats"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/insertData_carbs"
+            android:layout_marginLeft="8dp"
+            android:layout_toRightOf="@+id/insertData_carbs"
+            android:text="#fat"
+            android:textColor="#ffffff"
+            android:textSize="@dimen/FD_insertDataTab_demin"
+            android:textStyle="bold" />
+
+
+    </RelativeLayout>
+
+-->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/macroPrompterBar"
+        android:layout_width="match_parent"
+        android:layout_height="15dp"
+        android:background="@color/colorPrimary"
+        android:clipChildren="true"
+        android:padding="5dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/dynamicCardview"
+        android:layout_marginTop="5dp"></androidx.constraintlayout.widget.ConstraintLayout>
+
+    <TextView
+        android:id="@+id/foodNamePrompt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:text="food name"
+        android:textColor="#ffffff"
+        android:textSize="@dimen/FD_insertDataTab_demin"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@id/macroPrompterBar"
+        app:layout_constraintEnd_toStartOf="@id/amntPrompt"
+        app:layout_constraintStart_toStartOf="@+id/macroPrompterBar"
+        app:layout_constraintTop_toTopOf="@id/macroPrompterBar" />
+
+
+    <TextView
+        android:id="@+id/amntPrompt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:text="#servings"
+        android:textColor="#ffffff"
+        android:textSize="7sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@id/macroPrompterBar"
+        app:layout_constraintEnd_toStartOf="@id/caloriesPrompt"
+        app:layout_constraintStart_toEndOf="@+id/foodNamePrompt"
+        app:layout_constraintTop_toTopOf="@id/macroPrompterBar" />
+
+    <TextView
+        android:id="@+id/caloriesPrompt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:gravity="center"
+        android:text="#calories"
+        android:textColor="#ffffff"
+        android:textSize="7sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@id/macroPrompterBar"
+        app:layout_constraintEnd_toStartOf="@id/fatPrompt"
+        app:layout_constraintStart_toEndOf="@id/amntPrompt"
+        app:layout_constraintTop_toTopOf="@id/macroPrompterBar" />
+
+    <TextView
+        android:id="@+id/fatPrompt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="#fat"
+        android:textColor="#ffffff"
+        android:textSize="7sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@id/macroPrompterBar"
+        app:layout_constraintEnd_toStartOf="@id/carbsPrompt"
+        app:layout_constraintStart_toEndOf="@id/caloriesPrompt"
+        app:layout_constraintTop_toTopOf="@id/macroPrompterBar" />
+
+    <TextView
+        android:id="@+id/carbsPrompt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="#carbs"
+        android:textColor="#ffffff"
+        android:textSize="7sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@id/macroPrompterBar"
+        app:layout_constraintEnd_toStartOf="@id/proteinPrompt"
+        app:layout_constraintStart_toEndOf="@id/fatPrompt"
+        app:layout_constraintTop_toTopOf="@id/macroPrompterBar" />
+
+
+    <TextView
+        android:id="@+id/proteinPrompt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="#protein"
+        android:textColor="#ffffff"
+        android:textSize="7sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@id/macroPrompterBar"
+        app:layout_constraintEnd_toEndOf="@id/macroPrompterBar"
+        app:layout_constraintStart_toEndOf="@id/carbsPrompt"
+        app:layout_constraintTop_toTopOf="@id/macroPrompterBar" />
+
+    <ScrollView
+        android:id="@+id/newMeal_scrollview"
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:background="#80ffffff"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/macroPrompterBar">
+        <!--app:layout_constraintTop_toBottomOf="@+id/CalorieMacrosfieldPrompter" >-->
+
+        <LinearLayout
+            android:id="@+id/newMeal_scrollview_ll"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical" />
+    </ScrollView>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+

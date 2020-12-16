@@ -1,0 +1,498 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorPrimary"
+    tools:context=".infodata">
+
+
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="Settings"
+        android:textColor="@android:color/white"
+        android:textSize="50sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <TextView
+        android:id="@+id/TextView_TDEE"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/title"
+        android:layout_marginTop="8dp"
+        android:text="@string/TextView_TDEE"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:textSize="13sp"
+        android:textStyle="bold"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/title" />
+
+
+    <TextView
+        android:id="@+id/TextView_TDEEnumber"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/title"
+        android:layout_alignBaseline="@id/TextView_TDEE"
+        android:layout_marginTop="8dp"
+        android:layout_toEndOf="@+id/TextView_TDEE"
+        android:layout_toRightOf="@+id/TextView_TDEE"
+        android:text="@string/bmr_display"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:textSize="12sp"
+        android:textStyle="bold"
+        app:layout_constraintLeft_toRightOf="@id/TextView_TDEE"
+        app:layout_constraintTop_toBottomOf="@id/title" />
+
+
+    <TextView
+        android:id="@+id/TextView_calorieZoneHeader"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/TextView_TDEE"
+        android:layout_marginTop="8dp"
+        android:text="Daily Calorie Zone: "
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:textSize="12sp"
+        android:textStyle="bold"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/TextView_TDEE" />
+
+    <TextView
+        android:id="@+id/TextView_calorieZoneNumber"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/TextView_TDEEnumber"
+        android:layout_alignBaseline="@id/TextView_calorieZoneHeader"
+        android:layout_marginTop="8dp"
+        android:layout_toEndOf="@+id/TextView_calorieZoneHeader"
+        android:layout_toRightOf="@+id/TextView_calorieZoneHeader"
+        android:text="0"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:textSize="12sp"
+        android:textStyle="bold"
+        app:layout_constraintLeft_toRightOf="@id/TextView_calorieZoneHeader"
+        app:layout_constraintTop_toBottomOf="@id/TextView_TDEEnumber"/>
+
+    <ScrollView
+        android:id="@+id/scrollView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="#ffffff"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/TextView_calorieZoneHeader">
+
+        <RelativeLayout
+            android:id="@+id/RelativeLayout_scrollView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:paddingBottom="100dp">
+
+            <TextView
+                android:id="@+id/textView_sex"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/editText_age"
+                android:layout_marginStart="8dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginTop="40dp"
+                android:text="@string/TextView_sex"
+                android:textAlignment="center"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <RadioGroup
+                android:id="@+id/radioGroup_sex"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/textView_sex"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginRight="8dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/textView_sex">
+
+                <RadioButton
+                    android:id="@+id/radioButton_male"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/RadioButton_sex_male" />
+
+                <RadioButton
+                    android:id="@+id/radioButton_female"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/RadioButton_sex_female" />
+
+            </RadioGroup>
+
+
+            <TextView
+                android:id="@+id/textView_age"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginTop="20dp"
+                android:text="@string/TextView_age"
+                android:textAlignment="center"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"/>
+<!--android:layout_below="@id/textView_name"
+
+app:layout_constraintTop_toBottomOf="@+id/textView_name"-->
+
+
+            <EditText
+                android:id="@+id/editText_age"
+                android:layout_width="30dp"
+                android:layout_height="wrap_content"
+                android:layout_alignBaseline="@id/textView_age"
+                android:layout_marginStart="8dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginTop="20dp"
+                android:layout_toRightOf="@id/textView_age"
+                android:ems="10"
+                android:inputType="number"
+                android:maxLength="2"
+                android:textAlignment="center"
+                app:layout_constraintBaseline_toBaselineOf="@+id/textView_age"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/textView_age"
+                android:nextFocusRight="@id/editText_weight"
+                android:nextFocusDown="@id/editText_weight"/>
+
+
+            <TextView
+                android:id="@+id/textView_height"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBaseline="@id/textView_sex"
+                android:layout_marginStart="8dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginTop="40dp"
+                android:layout_toRightOf="@+id/textView_sex"
+                android:gravity="center_horizontal"
+                android:text="@string/TextView_height"
+                android:textAlignment="center"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView_sex" />
+
+
+            <TextView
+                android:id="@+id/Textview_height_feet"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/textView_height"
+                android:layout_marginStart="8dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginTop="10dp"
+                android:layout_toRightOf="@id/radioGroup_sex"
+                android:text="@string/TextView_feet"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/textView_height" />
+
+
+            <EditText
+                android:id="@+id/editText_feet"
+                android:layout_width="30dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/Textview_height_feet"
+                android:layout_marginStart="8dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginTop="8dp"
+                android:maxLength="1"
+                android:layout_toRightOf="@+id/radioGroup_sex"
+                android:ems="10"
+                android:inputType="number"
+                android:textAlignment="center"
+                android:textSize="14sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.225"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/Textview_height_feet"
+                android:nextFocusRight="@id/editText_inches"
+                android:nextFocusDown="@id/editText_inches"/>
+
+
+            <!--app:layout_constraintBaseline_toBaselineOf="@+id/editText_feet"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toEndOf="@+id/editText_feet"
+                -->
+
+            <TextView
+                android:id="@+id/textView_height_inches"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/textView_height"
+                android:layout_alignBaseline="@id/Textview_height_feet"
+                android:layout_marginStart="8dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginTop="10dp"
+                android:layout_toRightOf="@id/Textview_height_feet"
+                android:text="@string/TextView_inches"
+                android:textAlignment="center"
+                android:textAppearance="@style/TextAppearance.AppCompat.Small" />
+
+            <EditText
+                android:id="@+id/editText_inches"
+                android:layout_width="30dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/textView_height_inches"
+                android:layout_alignBaseline="@id/editText_feet"
+                android:layout_marginStart="8dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginTop="8dp"
+                android:maxLength="2"
+                android:layout_toRightOf="@id/editText_feet"
+                android:ems="10"
+                android:inputType="number"
+                android:textAlignment="center"
+                android:textSize="14sp"
+                android:nextFocusDown="@id/EditText_mealNumber"/>
+            <!--app:layout_constraintBaseline_toBaselineOf="@+id/textView_height_inches"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toEndOf="@+id/textView_height_inches" -->
+
+
+            <TextView
+                android:id="@+id/textView_weight"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginTop="16dp"
+                android:layout_toRightOf="@+id/editText_age"
+                android:layout_alignBaseline="@+id/editText_age"
+                android:text="@string/TextView_weight"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/editText_feet" />
+
+            <!--android:layout_below="@id/editText_name"-->
+
+
+            <EditText
+                android:id="@+id/editText_weight"
+                android:layout_width="50dp"
+                android:layout_height="wrap_content"
+                android:layout_alignBaseline="@id/textView_weight"
+                android:layout_marginStart="8dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginRight="8dp"
+                android:maxLength="3"
+                android:layout_toRightOf="@id/textView_weight"
+                android:ems="10"
+                android:inputType="number"
+                android:textAlignment="center"
+                android:nextFocusDown="@id/editText_feet"/>
+            <!--
+            app:layout_constraintBaseline_toBaselineOf="@+id/textView_weight"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.25"
+            app:layout_constraintStart_toEndOf="@+id/textView_weight" -->
+
+
+            <TextView
+                android:id="@+id/Textview_activitylvl"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/radioGroup_sex"
+                android:layout_marginStart="8dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginTop="40dp"
+                android:text="@string/TextView_activityLvlsPrompt"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <RadioGroup
+                android:id="@+id/radioGroup_activityLvls"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/Textview_activitylvl"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toEndOf="@+id/Textview_activitylvl"
+                app:layout_constraintTop_toBottomOf="@+id/Textview_activitylvl">
+
+                <RadioButton
+                    android:id="@+id/radioButton_activitylvl_0"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/RadioButton_activitlyLvl0"
+                    android:textSize="14sp" />
+                <!-- android:onClick="checkActLvlsButton"-->
+                <RadioButton
+                    android:id="@+id/radioButton_activitylvl_1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/RadioButton_activityLvl1"
+                    android:textSize="14sp" />
+                <!-- android:onClick="checkActLvlsButton"-->
+                <RadioButton
+                    android:id="@+id/radioButton_activitylvl_2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/RadioButton_activityLvl2" />
+                <!-- android:onClick="checkActLvlsButton"-->
+                <RadioButton
+                    android:id="@+id/radioButton_activitylvl_3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/RadioButton_activityLvl3" />
+
+                <RadioButton
+                    android:id="@+id/radioButton_activitylvl_4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/RadioButton_activityLvl4" />
+                <!-- android:onClick="checkActLvlsButton"-->
+            </RadioGroup>
+
+            <TextView
+                android:id="@+id/TextView_fitnessGoal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/radioGroup_activityLvls"
+                android:layout_marginStart="8dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginTop="12dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginRight="8dp"
+                android:text="@string/TextView_fitnessGoalPrompt"
+                android:textAppearance="@android:style/TextAppearance.Medium"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toEndOf="@+id/radioGroup_activityLvls" />
+
+            <RadioGroup
+                android:id="@+id/RadioGroup_fitnessGoals"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/TextView_fitnessGoal">
+
+                <RadioButton
+                    android:id="@+id/RadioButton_fitnessGoal_0"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/RadioButton_fitnessGoal_0" />
+
+                <RadioButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/RadioButton_fitnessGoal_1" />
+
+                <RadioButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/RadioButton_fitnessGoal_2" />
+            </RadioGroup>
+
+            <TextView
+                android:id="@+id/TextView_mealNumberPromp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/RadioGroup_fitnessGoals"
+                android:layout_marginStart="8dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginTop="40dp"
+                android:text="@string/TextView_mealNumberPromp" />
+
+            <EditText
+                android:id="@+id/EditText_mealNumber"
+                android:layout_width="30dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/RadioGroup_fitnessGoals"
+                android:layout_alignBaseline="@id/TextView_mealNumberPromp"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginStart="8dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginRight="8dp"
+                android:maxLength="1"
+                android:layout_toEndOf="@id/TextView_mealNumberPromp"
+                android:layout_toRightOf="@id/TextView_mealNumberPromp"
+                android:ems="10"
+                android:hint="@string/EditText_mealCount_hint"
+                android:inputType="textNoSuggestions|number"
+                android:textAlignment="center"
+
+            />
+
+            <Button
+                android:id="@+id/Button_calculateBmr"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/EditText_mealNumber"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginBottom="100dp"
+                android:background="@color/colorPrimaryDark"
+                android:padding="20dp"
+                android:text="@string/Button_calculateBmr"
+                android:textColor="#ffffff"
+                android:textSize="20sp" />
+
+
+        </RelativeLayout>
+
+
+    </ScrollView>
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/floatingActionButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
+        android:baseline="@android:dimen/thumbnail_width"
+        android:clickable="true"
+        android:onClick="launchFoodDiary"
+        app:backgroundTint="@color/colorPrimaryDark"
+        app:backgroundTintMode="multiply"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/title"
+        app:rippleColor="#ffffff"
+        app:srcCompat="@android:drawable/ic_menu_save" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+

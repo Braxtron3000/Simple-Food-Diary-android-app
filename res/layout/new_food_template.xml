@@ -1,0 +1,249 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:clipChildren="true"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/dynamicCardview_food"
+    android:layout_width="match_parent"
+    android:layout_height="50dp"
+    android:layout_margin="8dp"
+    android:layout_marginTop="8dp"
+    app:cardBackgroundColor="@color/darkYellow"
+    app:cardCornerRadius="8dp">
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:clipChildren="true"
+        android:id="@+id/constraintLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+
+        <Button
+            android:id="@+id/favoriteButton"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:background="@drawable/ic_star_border_black_24dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:onClick="addToFavorites"/>
+
+        <!--<androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/constraintColumn1"
+            android:clipChildren="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:layout_marginRight="8dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/puT_calories"
+            app:layout_constraintStart_toEndOf="@id/favoriteButton"
+            app:layout_constraintLeft_toRightOf="@id/favoriteButton"
+            app:layout_constraintTop_toTopOf="parent">-->
+
+
+        <TextView
+            android:id="@+id/puT_foodName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="food"
+            android:textColor="#ffff"
+            android:textSize="13sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/foodNamePrompt"
+            app:layout_constraintStart_toStartOf="@+id/foodNamePrompt"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <!--app:layout_constraintStart_toEndOf="@id/favoriteButton"-->
+
+
+        <TextView
+            android:id="@+id/puT_amnt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="amnt"
+            android:textColor="#ffff"
+            android:textSize="13sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/amntPrompt"
+            app:layout_constraintStart_toStartOf="@id/amntPrompt"
+            app:layout_constraintTop_toTopOf="parent" />
+        <!--</androidx.constraintlayout.widget.ConstraintLayout>-->
+
+
+        <TextView
+            android:id="@+id/puT_calories"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="calories"
+            android:textColor="#ffff"
+            android:textSize="13sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@id/caloriesPrompt"
+            app:layout_constraintStart_toStartOf="@id/caloriesPrompt"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+        <!--<ConstraintLayout
+            android:id="@+id/column3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginLeft="8dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/deleteButton"
+            app:layout_constraintStart_toEndOf="@+id/puT_calories"
+            app:layout_constraintTop_toTopOf="parent">-->
+
+        <TextView
+            android:id="@+id/puT_protein"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="protein"
+            android:textColor="#ffff"
+            android:textSize="13sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@id/proteinPrompt"
+            app:layout_constraintStart_toStartOf="@id/proteinPrompt"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/puT_carbs"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="carbs"
+            android:textColor="#ffff"
+            android:textSize="13sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@id/carbsPrompt"
+            app:layout_constraintStart_toStartOf="@id/carbsPrompt"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/puT_fat"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="fat"
+            android:textColor="#ffff"
+            android:textSize="13sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@id/fatPrompt"
+            app:layout_constraintStart_toStartOf="@id/fatPrompt"
+            app:layout_constraintTop_toTopOf="parent" />
+       <!-- </ConstraintLayout>
+            app:layout_constraintEnd_toStartOf="@id/deleteButton"-->
+
+
+        <Button
+            android:id="@+id/deleteButton"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:background="@android:drawable/ic_delete"
+            android:foregroundGravity="center_vertical"
+            android:onClick="deleteFood"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            />
+
+
+
+<!--SO BEGINS THE PROMPTS-->
+        <TextView
+            android:id="@+id/foodNamePrompt"
+            android:visibility="invisible"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:text="food name"
+            android:textColor="#ffffff"
+            android:textSize="@dimen/FD_insertDataTab_demin"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/amntPrompt"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+        <TextView
+            android:id="@+id/amntPrompt"
+            android:visibility="invisible"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:text="#servings"
+            android:textColor="#ffffff"
+            android:textSize="7sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/caloriesPrompt"
+            app:layout_constraintStart_toEndOf="@id/foodNamePrompt"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/caloriesPrompt"
+            android:visibility="invisible"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:gravity="center"
+            android:text="#calories"
+            android:textColor="#ffffff"
+            android:textSize="7sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/fatPrompt"
+            app:layout_constraintStart_toEndOf="@id/amntPrompt"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/fatPrompt"
+            android:visibility="invisible"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="#fat"
+            android:textColor="#ffffff"
+            android:textSize="7sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/carbsPrompt"
+            app:layout_constraintStart_toEndOf="@id/caloriesPrompt"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/carbsPrompt"
+            android:visibility="invisible"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="#carbs"
+            android:textColor="#ffffff"
+            android:textSize="7sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/proteinPrompt"
+            app:layout_constraintStart_toEndOf="@id/fatPrompt"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+        <TextView
+            android:id="@+id/proteinPrompt"
+            android:visibility="invisible"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="#protein"
+            android:textColor="#ffffff"
+            android:textSize="7sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/carbsPrompt"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+</androidx.cardview.widget.CardView>
